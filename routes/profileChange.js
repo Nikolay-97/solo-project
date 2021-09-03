@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const { User } = require('../db/models');
+const { User } = require('../models');
 
 router.get('/', (req, res) => {
   if (req.session.Authenticated) {
@@ -20,9 +19,8 @@ router.put('/', async (req, res) => {
   if (userMailCheck || userLoginCheck) {
     return res.json({ message: false, reason: 'Брат, такой логин или мэйл уже имеется' });
   }
-  const changedUser = await User.update({ login: usernameChange, email: emailChange },
+  await User.update({ login: usernameChange, email: emailChange },
     { where: { id: req.session.user.id } });
-  console.log(changedUser);
   req.session.user.login = usernameChange;
   req.session.user.email = emailChange;
   return res.json({ message: true });

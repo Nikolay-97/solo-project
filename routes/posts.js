@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../db/models');
+const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
   if (req.session.Authenticated) {
