@@ -24,7 +24,7 @@ router.put('/:id/edit', async (req, res) => {
   if (title === '' || description === '') {
     return res.json({ message: false, reason: 'Брат, тормози, пустой нельзя' });
   }
-  const changedUser = await Post.update({ title, description },
+  await Post.update({ title, description },
     { where: { id: req.params.id } });
   return res.json({ message: true });
 });

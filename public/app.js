@@ -306,10 +306,8 @@ if (seeTigr) {
     arrMap.forEach((el) => el.remove());
     const response = await fetch('https://some-random-api.ml/img/cat');
     const result = await response.json();
-    console.log(result);
     img.src = result.link;
     map.append(img);
-    // unauthText.innerText = phrase;
   });
 }
 
