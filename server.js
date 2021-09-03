@@ -18,6 +18,7 @@ const createpostRouter = require('./routes/createpost');
 const chatRouter = require('./routes/chat');
 
 dotenv.config();
+const PORT = process.env.PORT || 80;
 
 const app = express();
 
@@ -62,6 +63,6 @@ io.on('connection', (socket) => {
 });
 
 // слушаем порт на порту 3000
-httpServer.listen(process.env.PORT, () => {
+httpServer.listen(PORT, () => {
   console.log('Port started...');
 });
