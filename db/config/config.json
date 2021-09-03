@@ -12,6 +12,11 @@
       "ssl": {
         "rejectUnauthorized": false
       }
-    }
+    },
+    "username": "nikolay",
+    "password": "nikolay",
+    "database": "Project_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
 }
