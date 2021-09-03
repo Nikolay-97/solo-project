@@ -1,0 +1,26 @@
+
+{{#if Authenticated}}
+<div class="flex justify-center container" style="margin: 10px;">
+  <button class="btn yandexBtn" id="naHatu">На хату</button>
+  <button class="btn yandexBtn" id="nablatHatu">На блатхату</button>
+  <button class="btn yandexBtn" id="vKlub">В клуб</button>
+  <button class="btn yandexBtn" id="vSochi">В сочи</button>
+  <button class="btn" id="kTigram">В чат к тиграм</button>
+  <button class="btn" id="seeTigr">Посмотреть на тигра</button>
+
+</div>
+  <div class="container"  style="width: 200vh; height: 350px;" id="map"></div>
+{{else}}
+  <div class="flex justify-center container" style="margin: 10px;">
+  <button class="btn unauthBtn" id="naHatu">На хату</button>
+  <button class="btn unauthBtn" id="nablatHatu">На блатхату</button>
+  <button class="btn unauthBtn" id="vKlub">В клуб</button>
+  <button class="btn unauthBtn" id="vSochi">В сочи</button>
+  <button class="btn unauthBtn">В чат к тиграм</button>
+  <button class="btn unauthBtn">Посмотреть на тигра</button>
+  </div>
+  <div class="container"  style="width: 200vh; height: 350px;">
+    <h1 id="unauthText"></h1>
+  </div>
+
+{{/if}}

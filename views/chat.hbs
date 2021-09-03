@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row justify-content-md-center"><h1>Тигриный чат</h1></div>
+  <div class="row justify-content-md-center">
+    <div class="col-sm-6">
+      <div
+        id="messagesList"
+        class="border containerres darker p-3"
+        style="overflow: auto; overflow-x: hidden; height: 260px;"
+      >
+
+      </div> 
+    </div>
+    <div class="col-sm-6">
+      <div class="border containerres darker p-3">
+        <form id="messageForm">
+          <label for="nickname">Ваш ник:</label>
+          <input
+            disabled
+            type="text"
+            class="form-control mb-3"
+            id="nickname"
+            name="nickname"
+            value="{{user}}"
+            placeholder="Введите ник..."
+          />
+          <label for="message">Сообщение:</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            id="message"
+            name="message"
+            placeholder="Введите сообщение..."
+          />
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+  const socket = io(); socket.on('chat:newMessage', (fullMessage) => { const p =
+  document.createElement('p'); p.innerText = fullMessage;
+  document.getElementById('messagesList').prepend(p); });
+  document.getElementById('messageForm').addEventListener('submit', (e) => {
+  e.preventDefault(); const nicknameValue = e.target.nickname.value; const
+  messageValue = e.target.message.value; socket.emit('chat:send', nicknameValue,
+  messageValue); })
+</script>

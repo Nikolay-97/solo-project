@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{user}}</b> доброго времени суток!</h5>
+        <p class="card-text">Brat sozday post, esli kayf</p>
+        <a class="card-link" href="/createpost">Create new Post</a>
+      </div>
+    </div>
+  </div>
+
+  {{#each allPosts}}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <a href="/posts/{{this.id}}/edit" class="card-link">Update</a>
+        <a href="#" class="card-link">Delete</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+</div>
