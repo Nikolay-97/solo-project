@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     if (title === '' || description === '') {
       return res.json({ message: false, reason: 'Брат, тормози, пустой нельзя' });
     }
-    const newPost = await Post.create({
+    await Post.create({
       UserId: req.session.user.id,
       title,
       description,

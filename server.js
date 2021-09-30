@@ -13,9 +13,9 @@ const logoutRouter = require('./routes/logout');
 const regRouter = require('./routes/reg');
 const profileRouter = require('./routes/profile');
 const profileChangeRouter = require('./routes/profileChange');
+const chatRouter = require('./routes/chat');
 const postsRouter = require('./routes/posts');
 const createpostRouter = require('./routes/createpost');
-const chatRouter = require('./routes/chat');
 
 dotenv.config();
 const PORT = process.env.PORT || 80;
